@@ -1,0 +1,114 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif, monospace, serif;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: lightgray;
+  padding: 30px 0px;
+  margin: 10px 0px;
+}
+
+.header h1 {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  text-align: center;
+}
+
+.header button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 0px 3px;
+  outline: none;
+  border: 1px solid gray;
+  background: -webkit-gradient(linear, left top, left bottom, from(lightgray), to(white));
+  background: linear-gradient(lightgray, white);
+  font-weight: bold;
+}
+
+.header button:active {
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(lightgray));
+  background: linear-gradient(white, lightgray);
+}
+
+[class*="xs"] {
+  width: 20%;
+}
+
+.row {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.row .panel {
+  border: #2c87ff 1px solid;
+}
+
+.row .panel * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 8px;
+}
+
+.row .panel .panel-heading {
+  min-height: 2rem;
+  background: #2c87ff;
+  color: #fff;
+}
+
+.row .panel .panel-body {
+  min-height: 6rem;
+}
+
+.highlight {
+  background-color: yellow;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,112 @@
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import 'partials/_list.scss', 'partials/_nav.scss';
+
+$main-color: lightblue;
+$font-stack: Helvetica, sans-serif;
+$border: 3px solid #333;
+
+@mixin themable($theme-name, $container-bg, $left-bg, $right-bg, $inntertext, $button-bg) {
+    .#{$theme-name} {
+        div {
+            background-color: $container-bg;
+            border: $border;
+            display: flex;
+            height: 500px;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 1em;
+            width: 90%;
+
+            * {
+                color: $inntertext;
+                font-size: 2rem;
+            }
+
+            .left {
+                background-color: $left-bg;
+                height: 100%;
+                width: 70%;
+                
+                button {
+                    background-color: $button-bg;
+                    border: 0;
+                    border-radius: 10px;
+                    bottom: 10px;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    padding: 1rem 2rem;
+                    right: 10px;
+                }
+            }
+
+            .right {
+                @extend .left;
+                width: 28%;
+                position: relative;
+
+                
+            }
+        }
+    }
+}
+
+@include themable(theme-1, #f7eb80, #497265, #82aa91, #fff, #bc6a49);
+@include themable(theme-2, #e4ada7, #d88880, #cc6359, #fff, #481b16);
+
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: {
+        top: 25px;
+    };
+    gap: 5px;
+    font-family: $font-stack;
+
+    section {
+        width: 300px;
+        height: 400px;
+        background-color: $main-color;
+        border: $border;
+        border-radius: 10px;
+        padding: {
+            top: 10px;
+            left: 5px;
+            bottom: 30px;
+            right: 10px
+        };
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        button {
+            background-color: $main-color;
+            border: $border;
+            border-radius: 10px;
+            height: 25px;
+            margin: 5px;
+            outline: none;
+
+            &:active {
+                background-color: darkorchid;
+                border: 2px solid red;
+            }
+
+            &#testing {
+                align-self: flex-end;
+            }
+        }
+
+        #submit {
+            align-self: flex-end;
+        }
+    }
+}

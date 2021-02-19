@@ -1,0 +1,17 @@
+html {
+    background-color: black;
+    color: white;
+}
+
+textarea {
+    resize: none;
+    height: 1.1em;
+    width: 250px;
+    overflow: hidden;
+}
+
+span {
+    border-right: white 2px solid;
+    margin-left: 20px;
+    margin-right: 20px;
+}

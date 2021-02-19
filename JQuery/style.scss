@@ -1,0 +1,82 @@
+$color: #000;
+$panel-color: #fff;
+$panel-background: rgb(44,135,255);
+$font: sans-serif, monospace, serif;
+
+@mixin flexCenter($direction, $justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: none;
+    flex-wrap: wrap;
+    flex-direction: $direction;
+}
+
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+.header {
+    @include flexCenter(row, center);
+    background-color: lightgray;
+    padding: 30px 0px;
+    margin: 10px 0px;
+
+    h1 {
+        flex: 100%;
+        text-align: center;
+    }
+
+    button {
+        padding: {
+            top: 8px;
+            bottom: 8px;
+            left: 3px;
+            right: 3px;
+        };
+
+        margin: 0px 3px;
+        outline: none;
+        border: 1px solid gray;
+        background: linear-gradient(lightgray, white);
+        font-weight: bold;
+
+        &:active {
+            background: linear-gradient(white, lightgray);
+        }
+    }
+}
+
+[class*="xs"]{
+    width: 20%;
+}
+
+.row {
+    width: 90%;
+    margin: auto;
+    @include flexCenter(row, space-around);
+    .panel {
+        border: $panel-background 1px solid;
+
+        *{
+            @include flexCenter(row, none);
+            padding: 8px;
+        }
+
+        .panel-heading {
+            min-height: 2rem;
+            background: $panel-background;
+            color: $panel-color;
+        }
+
+        .panel-body {
+            min-height: 6rem;
+        }
+    }
+}
+
+.highlight {
+    background-color: yellow;
+}
