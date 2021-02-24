@@ -1,0 +1,42 @@
+body {
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.extraGames {
+    text-align: center;
+    background: gray;
+    height: 350px;
+    width: 500px;
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        text-decoration: underline;
+    }
+
+    button {
+        width: 150px;
+        margin-bottom: 20px;
+
+        a {
+            width: 100%;
+        }
+    }
+}
+
+#clickArea {
+    background: lightblue;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    user-select: none;
+}

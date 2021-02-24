@@ -1,8 +1,49 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: monospace;
 }
-/*# sourceMappingURL=style.css.map */
+
+.unselected {
+  background-color: #fafafa;
+  color: #333;
+}
+
+.tabs-panels {
+  min-height: 200px;
+}
+
+.tabs-panels ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-panels ul li {
+  list-style-type: none;
+  display: inline-block;
+  background: #999;
+  padding: 3px 10px;
+  color: #fafafa;
+  font-weight: 200;
+  border-radius: 10px 10px 0 0;
+}
+
+.tabs-panels ul li:hover, .tabs-panels ul li.active {
+  color: #fafafa;
+  background: #666;
+}
+
+.tabs-panels .panel {
+  display: none;
+  background-color: #c9c9c9;
+  padding: 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.tabs-panels .panel.active {
+  display: block;
+}

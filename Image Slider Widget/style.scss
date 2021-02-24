@@ -1,0 +1,42 @@
+
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: black;
+}
+
+.clickyContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#slider {
+    width: 720px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+
+    .slides {
+        display: block;
+        width: 6000px;
+        height: 400px;
+    }
+
+    .slide {
+        float: left;
+        width: 720px;
+        list-style-type: none;
+        height: 400px;
+    }
+}
+

@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: black;
+}
+
+.clickyContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#slider {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+  margin: auto;
+}
+
+#slider .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+}
+
+#slider .slide {
+  float: left;
+  width: 720px;
+  list-style-type: none;
+  height: 400px;
+}
