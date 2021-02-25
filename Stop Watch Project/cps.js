@@ -25,7 +25,7 @@ $(function() {
 
             if(second < 0) {
                 clearInterval(countdownTimer);
-                cps.textContent = clicks / 8;
+                cps.textContent = (clicks / 8).toFixed(2);
                 pCPS.style.display = "flex";
                 timeElem.textContent = `00:00:00.0`;
                 clickArea.textContent = "Restart";

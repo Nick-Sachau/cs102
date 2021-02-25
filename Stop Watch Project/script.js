@@ -10,6 +10,10 @@ $(function() {
     let laps = 0;
     let lastCurrentLapTime = 0;
 
+    $(`#addMinute`).on('click', function() {
+        minute++;
+    })
+
     timeElem.textContent = "00:00:00.00";
     timeControl.addEventListener('click', function() {
         if(timeControl.textContent == "Start") {
@@ -89,7 +93,6 @@ $(function() {
     }
 
     function addLap() {
-        console.log(lastCurrentLapTime)
         laps++;
         let newLi = document.createElement('li');
         newLi.setAttribute('id', `lap${laps}`);
@@ -102,13 +105,36 @@ $(function() {
         
         if(laps == 1) {
             newLi.textContent = currentTime;
-        }else if(laps == 2) {
-            let newLapTime = currentTime - lastCurrentLapTime
-            newLi.textContent = newLapTime.toFixed(2);
         }else {
-            let newLapTime = currentTime - lastCurrentLapTime
-            newLi.textContent = newLapTime.toFixed(2)
-        };
+            if(minute > 0) {
+                temp = currentTime.split(":")
+                let tempCurrentTime = Number(temp[0]* 60) + Number(temp[1]);
+                let tempMin = 0;
+                if(tempCurrentTime >= 60) {
+                    tempMin = (tempCurrentTime / 60).toFixed(0);
+
+                    let convMin = (tempMin * 60).toFixed(2);
+                    let difference = tempCurrentTime - convMin;
+                    let finalDifference;
+
+                    if(difference.toFixed(2) < 10) {
+                        finalDifference = `${tempMin}:0${difference.toFixed(2)}`;
+                    }else {
+                        finalDifference = `${tempMin}:${difference.toFixed(2)}`;
+                    }
+                    
+                    newLi.textContent = finalDifference;
+                }else {
+                    let newLapTime = tempCurrentTime - lastCurrentLapTime;
+                    newLi.textContent = newLapTime.toFixed(2);
+                }
+                
+            }else {
+                let newLapTime = currentTime - lastCurrentLapTime;
+                newLi.textContent = newLapTime.toFixed(2);
+            }
+            
+        }
 
         lapList.append(newLi);
         lastCurrentLapTime = currentTime;
@@ -123,6 +149,6 @@ $(function() {
         second = 0;
         minute = 0;
         hour = 0;
-        lap.textContent = "Lap";    
+        lap.textContent = "Lap";
     }
 });
